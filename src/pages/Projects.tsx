@@ -24,8 +24,7 @@ const Projects = () => {
         "Mobile Ready: 100% responsive across all devices"
       ],
       github: "https://github.com/raza-abidii/Result-Tracker",
-      live: "https://deccan-result.vercel.app/",
-      preview: "https://deccan-result.vercel.app/"
+      live: "https://deccan-result.vercel.app/"
     },
     {
       title: "Credit Card Fraud Detection",
@@ -47,8 +46,7 @@ const Projects = () => {
         "Scalable Architecture: Handles millions of transactions daily"
       ],
       github: "#",
-      live: "#",
-      preview: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop&crop=center"
+      live: "#"
     },
     {
       title: "E-Commerce Demand Forecasting",
@@ -70,8 +68,7 @@ const Projects = () => {
         "Multi-product Support: Scalable across product categories"
       ],
       github: "#",
-      live: "#",
-      preview: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center"
+      live: "#"
     },
     {
       title: "Expense Tracker Application",
@@ -93,8 +90,7 @@ const Projects = () => {
         "Financial Insights: Comprehensive spending pattern analysis"
       ],
       github: "#",
-      live: "#",
-      preview: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop&crop=center"
+      live: "#"
     }
   ];
 
@@ -126,12 +122,10 @@ const Projects = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="max-w-7xl mx-auto px-6 pb-20">
-        <div className="space-y-12">
+      <section className="max-w-5xl mx-auto px-6 pb-20">
+        <div className="grid gap-12">
           {allProjects.map((project, index) => (
-            <div key={index} className="grid lg:grid-cols-3 gap-6">
-              {/* Project Information Card */}
-              <article className="lg:col-span-2 group border border-border rounded-lg p-6 hover:border-accent/50 transition-colors">
+            <article key={index} className="group border border-border rounded-lg p-8 hover:border-accent/50 transition-colors">
                 {/* Project Header */}
                 <div className="flex items-start justify-between gap-4 mb-6">
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground group-hover:text-accent transition-colors">
@@ -210,49 +204,7 @@ const Projects = () => {
                   </div>
                 </div>
               </article>
-
-              {/* Separate Preview Card */}
-              <div className="lg:col-span-1">
-                <div className="sticky top-8">
-                  <div className="border border-border rounded-lg p-4 hover:border-accent/50 transition-colors bg-card">
-                    <h3 className="font-semibold text-lg text-foreground mb-4">Live Preview</h3>
-                    <div className="relative overflow-hidden rounded-lg border border-border bg-secondary">
-                      {project.live !== "#" ? (
-                        <div className="relative w-full h-64 lg:h-80">
-                          <iframe
-                            src={project.preview}
-                            title={`${project.title} live preview`}
-                            className="w-full h-full scale-75 origin-top-left"
-                            style={{ 
-                              width: '133.33%', 
-                              height: '133.33%',
-                              pointerEvents: 'none'
-                            }}
-                            loading="lazy"
-                          />
-                          <div className="absolute inset-0 bg-transparent hover:bg-accent/5 transition-colors cursor-pointer"
-                               onClick={() => window.open(project.live, '_blank')}
-                          />
-                          <div className="absolute bottom-2 right-2 bg-background/80 backdrop-blur-sm rounded px-2 py-1">
-                            <span className="text-xs text-muted-foreground">Click to open</span>
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="w-full h-64 lg:h-80 flex items-center justify-center">
-                          <img 
-                            src={project.preview} 
-                            alt={`${project.title} preview`}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          />
-                          <div className="absolute inset-0 bg-background/20 hover:bg-background/10 transition-colors" />
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+            ))}
         </div>
       </section>
     </div>

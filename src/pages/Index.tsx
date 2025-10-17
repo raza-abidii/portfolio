@@ -8,29 +8,25 @@ const Index = () => {
       title: "Result Tracker - College Results Management System",
       description: "Full-stack web application for Deccan College of Engineering and Technology to manage student examination results with secure authentication, automated data processing, and real-time analytics. Features dual interface, smart result search, triple data entry methods, and web scraping integration.",
       tech: ["React", "TypeScript", "Supabase", "PostgreSQL", "Node.js", "Cheerio", "Tailwind CSS"],
-      link: "https://deccan-result.vercel.app/",
-      preview: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center"
+      link: "https://deccan-result.vercel.app/"
     },
     {
       title: "Credit Card Fraud Detection",
       description: "Machine learning model to detect fraudulent credit card transactions using advanced anomaly detection techniques and ensemble methods.",
       tech: ["Python", "Scikit-learn", "Pandas", "XGBoost"],
-      link: "#",
-      preview: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop&crop=center"
+      link: "#"
     },
     {
       title: "E-Commerce Demand Forecasting",
       description: "Time series forecasting system to predict product demand, optimizing inventory management and reducing operational costs.",
       tech: ["Python", "TensorFlow", "ARIMA", "Prophet"],
-      link: "#",
-      preview: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center"
+      link: "#"
     },
     {
       title: "Expense Tracker Application",
       description: "Full-stack web application for personal finance management with data visualization and budgeting features.",
       tech: ["React", "Node.js", "MongoDB", "Chart.js"],
-      link: "#",
-      preview: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop&crop=center"
+      link: "#"
     }
   ];
 
@@ -151,71 +147,34 @@ const Index = () => {
             Featured Projects
           </h2>
         </Link>
-        <div className="space-y-16">
+        <div className="space-y-12">
           {projects.map((project, index) => (
             <article key={index} className="group">
-              <div className="space-y-6">
-                {/* Project Content */}
-                <div className="space-y-4">
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-semibold text-xl text-foreground group-hover:text-accent transition-colors">
-                      {project.title}
-                    </h3>
-                    <a 
-                      href={project.link}
-                      className="text-muted-foreground hover:text-accent transition-colors flex-shrink-0"
-                      aria-label={`View ${project.title}`}
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                    </a>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, i) => (
-                      <span 
-                        key={i}
-                        className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+              <div className="space-y-3">
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="font-semibold text-xl text-foreground group-hover:text-accent transition-colors">
+                    {project.title}
+                  </h3>
+                  <a 
+                    href={project.link}
+                    className="text-muted-foreground hover:text-accent transition-colors flex-shrink-0"
+                    aria-label={`View ${project.title}`}
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                  </a>
                 </div>
-
-                {/* Project Preview */}
-                <div className="relative overflow-hidden rounded-lg border border-border group-hover:border-accent/50 transition-colors bg-secondary">
-                  {project.link !== "#" ? (
-                    <div className="relative w-full h-64 md:h-80">
-                      <iframe
-                        src={project.link}
-                        title={`${project.title} live preview`}
-                        className="w-full h-full scale-75 origin-top-left"
-                        style={{ 
-                          width: '133.33%', 
-                          height: '133.33%',
-                          pointerEvents: 'none'
-                        }}
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-transparent group-hover:bg-accent/5 transition-colors cursor-pointer"
-                           onClick={() => window.open(project.link, '_blank')}
-                      />
-                      <div className="absolute bottom-2 right-2 bg-background/80 backdrop-blur-sm rounded px-2 py-1">
-                        <span className="text-xs text-muted-foreground">Live Preview</span>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="w-full h-64 md:h-80 flex items-center justify-center">
-                      <img 
-                        src={project.preview} 
-                        alt={`${project.title} preview`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-background/20 group-hover:bg-background/10 transition-colors" />
-                    </div>
-                  )}
+                <p className="text-muted-foreground leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech, i) => (
+                    <span 
+                      key={i}
+                      className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             </article>
