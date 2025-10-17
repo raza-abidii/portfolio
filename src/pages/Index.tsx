@@ -1,0 +1,306 @@
+import { Github, Linkedin, Mail, Youtube, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ThemeToggle } from "@/components/theme-toggle";
+
+const Index = () => {
+  const projects = [
+    {
+      title: "Exam Track - College Results Management System",
+      description: "Full-stack web application for Deccan College of Engineering and Technology to manage student examination results with secure authentication, automated data processing, and real-time analytics. Features dual interface, smart result search, triple data entry methods, and web scraping integration.",
+      tech: ["React", "TypeScript", "Supabase", "PostgreSQL", "Node.js", "Cheerio", "Tailwind CSS"],
+      link: "https://deccan-result.vercel.app/"
+    },
+    {
+      title: "Credit Card Fraud Detection",
+      description: "Machine learning model to detect fraudulent credit card transactions using advanced anomaly detection techniques and ensemble methods.",
+      tech: ["Python", "Scikit-learn", "Pandas", "XGBoost"],
+      link: "#"
+    },
+    {
+      title: "E-Commerce Demand Forecasting",
+      description: "Time series forecasting system to predict product demand, optimizing inventory management and reducing operational costs.",
+      tech: ["Python", "TensorFlow", "ARIMA", "Prophet"],
+      link: "#"
+    },
+    {
+      title: "Expense Tracker Application",
+      description: "Full-stack web application for personal finance management with data visualization and budgeting features.",
+      tech: ["React", "Node.js", "MongoDB", "Chart.js"],
+      link: "#"
+    }
+  ];
+
+  const experiences = [
+    {
+      role: "Data Analyst",
+      company: "Amazon",
+      period: "2022 - Present",
+      achievements: [
+        "Developed analytics dashboards improving operational efficiency by 25%",
+        "Led data-driven initiatives for inventory optimization",
+        "Collaborated with cross-functional teams to drive insights"
+      ]
+    },
+    {
+      role: "Technology Fellow",
+      company: "Code for India",
+      period: "2021 - 2022",
+      achievements: [
+        "Built civic tech solutions impacting 10,000+ citizens",
+        "Mentored junior developers in best practices",
+        "Contributed to open-source government projects"
+      ]
+    }
+  ];
+
+  const skills = {
+    "Data & ML": ["Python", "TensorFlow", "Scikit-learn", "PyTorch", "SQL", "Pandas"],
+    "Web Development": ["React", "TypeScript", "Node.js", "MongoDB", "REST APIs"],
+    "Tools & Cloud": ["Git", "Docker", "AWS", "Jupyter", "Tableau"],
+    "Soft Skills": ["Problem Solving", "Communication", "Team Leadership", "Agile"]
+  };
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Theme Toggle - Fixed position in top right */}
+      <div className="fixed top-6 right-6 z-50">
+        <ThemeToggle />
+      </div>
+      
+      {/* Hero Section */}
+      <section className="max-w-3xl mx-auto px-6 py-20 md:py-32">
+        <div className="space-y-6">
+          <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground tracking-tight">
+            Raza Abidi
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground font-light">
+            Data Analyst & Technologist based in Hyderabad.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-2xl">
+            I build intelligent systems that solve real problems, blending machine learning with practical engineering to create impact.
+          </p>
+          
+          {/* Social Links */}
+          <div className="flex gap-4 pt-4">
+            <a 
+              href="https://github.com/raza-abidii" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-accent transition-colors"
+              aria-label="GitHub"
+            >
+              <Github className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/raza-abidi-53675020b/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-accent transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a 
+              href="mailto:razaabidi030@gmail.com"
+              className="text-muted-foreground hover:text-accent transition-colors"
+              aria-label="Email"
+            >
+              <Mail className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-3xl mx-auto px-6">
+        <div className="border-t border-border"></div>
+      </div>
+
+      {/* Projects Section */}
+      <section className="max-w-3xl mx-auto px-6 py-20">
+        <Link to="/projects">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-12 hover:text-accent transition-colors cursor-pointer">
+            Featured Projects
+          </h2>
+        </Link>
+        <div className="space-y-12">
+          {projects.map((project, index) => (
+            <article key={index} className="group">
+              <div className="space-y-3">
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="font-semibold text-xl text-foreground group-hover:text-accent transition-colors">
+                    {project.title}
+                  </h3>
+                  <a 
+                    href={project.link}
+                    className="text-muted-foreground hover:text-accent transition-colors flex-shrink-0"
+                    aria-label={`View ${project.title}`}
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                  </a>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech, i) => (
+                    <span 
+                      key={i}
+                      className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        
+        {/* View All Projects Link */}
+        <div className="mt-12 text-center">
+          <Link 
+            to="/projects"
+            className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors font-medium"
+          >
+            View All Projects
+            <ExternalLink className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-3xl mx-auto px-6">
+        <div className="border-t border-border"></div>
+      </div>
+
+      {/* Experience Section */}
+      <section className="max-w-3xl mx-auto px-6 py-20">
+        <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-12">
+          Experience
+        </h2>
+        <div className="space-y-12">
+          {experiences.map((exp, index) => (
+            <article key={index}>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="font-semibold text-xl text-foreground">
+                    {exp.role}
+                  </h3>
+                  <div className="flex items-center gap-3 text-muted-foreground mt-1">
+                    <span className="font-medium">{exp.company}</span>
+                    <span className="text-sm">•</span>
+                    <span className="text-sm">{exp.period}</span>
+                  </div>
+                </div>
+                <ul className="space-y-2">
+                  {exp.achievements.map((achievement, i) => (
+                    <li key={i} className="text-muted-foreground leading-relaxed pl-4 border-l-2 border-secondary">
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-3xl mx-auto px-6">
+        <div className="border-t border-border"></div>
+      </div>
+
+      {/* Skills Section */}
+      <section className="max-w-3xl mx-auto px-6 py-20">
+        <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-12">
+          Skills
+        </h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          {Object.entries(skills).map(([category, items]) => (
+            <div key={category} className="space-y-3">
+              <h3 className="font-semibold text-lg text-foreground">
+                {category}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {items.map((skill, i) => (
+                  <span 
+                    key={i}
+                    className="text-sm text-foreground bg-secondary px-3 py-1.5 rounded"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-3xl mx-auto px-6">
+        <div className="border-t border-border"></div>
+      </div>
+
+      {/* About Section */}
+      <section className="max-w-3xl mx-auto px-6 py-20">
+        <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
+          About Me
+        </h2>
+        <div className="space-y-4 text-muted-foreground leading-relaxed">
+          <p>
+            I'm a data scientist and technologist from Hyderabad, India, passionate about using technology to solve meaningful problems. My work sits at the intersection of machine learning, software engineering, and product thinking.
+          </p>
+          <p>
+            Currently, I'm exploring advanced ML techniques, building full-stack applications, and contributing to open-source projects. I believe in continuous learning and sharing knowledge with the community.
+          </p>
+          <p>
+            When I'm not coding, you'll find me reading about emerging technologies, experimenting with new frameworks, or mentoring aspiring developers.
+          </p>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-3xl mx-auto px-6">
+        <div className="border-t border-border"></div>
+      </div>
+
+      {/* Contact Section */}
+      <section className="max-w-3xl mx-auto px-6 py-20">
+        <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-8">
+          Get in Touch
+        </h2>
+        <p className="text-muted-foreground leading-relaxed mb-6">
+          I'm always open to interesting conversations and collaboration opportunities. Feel free to reach out if you'd like to connect.
+        </p>
+        <a 
+          href="mailto:your.email@example.com"
+          className="inline-flex items-center gap-2 text-accent hover:text-foreground transition-colors font-medium"
+        >
+          <Mail className="w-5 h-5" />
+          your.email@example.com
+        </a>
+      </section>
+
+      {/* Footer */}
+      <footer className="max-w-3xl mx-auto px-6 py-12 border-t border-border">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+          <p>© 2025 Syed Mohammed Raza Husain Abidi. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+              GitHub
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+              LinkedIn
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+              YouTube
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
