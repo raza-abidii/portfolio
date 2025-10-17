@@ -24,7 +24,8 @@ const Projects = () => {
         "Mobile Ready: 100% responsive across all devices"
       ],
       github: "https://github.com/raza-abidii/Result-Tracker",
-      live: "https://deccan-result.vercel.app/"
+      live: "https://deccan-result.vercel.app/",
+      preview: "https://deccan-result.vercel.app/"
     },
     {
       title: "Credit Card Fraud Detection",
@@ -46,7 +47,8 @@ const Projects = () => {
         "Scalable Architecture: Handles millions of transactions daily"
       ],
       github: "#",
-      live: "#"
+      live: "#",
+      preview: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop&crop=center"
     },
     {
       title: "E-Commerce Demand Forecasting",
@@ -68,7 +70,8 @@ const Projects = () => {
         "Multi-product Support: Scalable across product categories"
       ],
       github: "#",
-      live: "#"
+      live: "#",
+      preview: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center"
     },
     {
       title: "Expense Tracker Application",
@@ -90,7 +93,8 @@ const Projects = () => {
         "Financial Insights: Comprehensive spending pattern analysis"
       ],
       github: "#",
-      live: "#"
+      live: "#",
+      preview: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop&crop=center"
     }
   ];
 
@@ -123,82 +127,131 @@ const Projects = () => {
 
       {/* Projects Grid */}
       <section className="max-w-7xl mx-auto px-6 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="space-y-12">
           {allProjects.map((project, index) => (
-            <article key={index} className="group border border-border rounded-lg p-6 hover:border-accent/50 transition-colors h-fit">
-              {/* Project Header */}
-              <div className="flex items-start justify-between gap-4 mb-4">
-                <h2 className="font-serif text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors">
-                  {project.title}
-                </h2>
-                <div className="flex gap-3 flex-shrink-0">
-                  <a 
-                    href={project.github}
-                    className="text-muted-foreground hover:text-accent transition-colors"
-                    aria-label={`View ${project.title} on GitHub`}
-                  >
-                    <Github className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href={project.live}
-                    className="text-muted-foreground hover:text-accent transition-colors"
-                    aria-label={`View ${project.title} live demo`}
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
-
-              {/* Project Description */}
-              <p className="text-muted-foreground leading-relaxed mb-3 text-sm">
-                {project.description}
-              </p>
-              
-              <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
-                {project.longDescription}
-              </p>
-
-              {/* Tech Stack */}
-              <div className="mb-4">
-                <h3 className="font-semibold text-base text-foreground mb-2">Tech Stack</h3>
-                <div className="flex flex-wrap gap-1.5">
-                  {project.tech.map((tech, i) => (
-                    <span 
-                      key={i}
-                      className="text-xs text-muted-foreground bg-secondary px-2 py-1 rounded-full border border-border"
+            <div key={index} className="grid lg:grid-cols-3 gap-6">
+              {/* Project Information Card */}
+              <article className="lg:col-span-2 group border border-border rounded-lg p-6 hover:border-accent/50 transition-colors">
+                {/* Project Header */}
+                <div className="flex items-start justify-between gap-4 mb-6">
+                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground group-hover:text-accent transition-colors">
+                    {project.title}
+                  </h2>
+                  <div className="flex gap-3 flex-shrink-0">
+                    <a 
+                      href={project.github}
+                      className="text-muted-foreground hover:text-accent transition-colors"
+                      aria-label={`View ${project.title} on GitHub`}
                     >
-                      {tech}
-                    </span>
-                  ))}
+                      <Github className="w-5 h-5" />
+                    </a>
+                    <a 
+                      href={project.live}
+                      className="text-muted-foreground hover:text-accent transition-colors"
+                      aria-label={`View ${project.title} live demo`}
+                    >
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Project Content */}
+                <div className="space-y-6">
+                  {/* Project Description */}
+                  <div>
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      {project.description}
+                    </p>
+                    
+                    <p className="text-muted-foreground leading-relaxed">
+                      {project.longDescription}
+                    </p>
+                  </div>
+
+                  {/* Tech Stack */}
+                  <div>
+                    <h3 className="font-semibold text-lg text-foreground mb-3">Tech Stack</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, i) => (
+                        <span 
+                          key={i}
+                          className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full border border-border"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Key Features */}
+                  <div>
+                    <h3 className="font-semibold text-lg text-foreground mb-3">Key Features</h3>
+                    <ul className="space-y-2">
+                      {project.features.map((feature, i) => (
+                        <li key={i} className="text-muted-foreground flex items-start gap-2">
+                          <span className="text-accent mt-1.5 flex-shrink-0">•</span>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Impact & Results */}
+                  <div>
+                    <h3 className="font-semibold text-lg text-foreground mb-3">Impact & Results</h3>
+                    <ul className="space-y-2">
+                      {project.impact.map((result, i) => (
+                        <li key={i} className="text-muted-foreground flex items-start gap-2">
+                          <span className="text-accent mt-1.5 flex-shrink-0">•</span>
+                          <span>{result}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              {/* Separate Preview Card */}
+              <div className="lg:col-span-1">
+                <div className="sticky top-8">
+                  <div className="border border-border rounded-lg p-4 hover:border-accent/50 transition-colors bg-card">
+                    <h3 className="font-semibold text-lg text-foreground mb-4">Live Preview</h3>
+                    <div className="relative overflow-hidden rounded-lg border border-border bg-secondary">
+                      {project.live !== "#" ? (
+                        <div className="relative w-full h-64 lg:h-80">
+                          <iframe
+                            src={project.preview}
+                            title={`${project.title} live preview`}
+                            className="w-full h-full scale-75 origin-top-left"
+                            style={{ 
+                              width: '133.33%', 
+                              height: '133.33%',
+                              pointerEvents: 'none'
+                            }}
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-transparent hover:bg-accent/5 transition-colors cursor-pointer"
+                               onClick={() => window.open(project.live, '_blank')}
+                          />
+                          <div className="absolute bottom-2 right-2 bg-background/80 backdrop-blur-sm rounded px-2 py-1">
+                            <span className="text-xs text-muted-foreground">Click to open</span>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="w-full h-64 lg:h-80 flex items-center justify-center">
+                          <img 
+                            src={project.preview} 
+                            alt={`${project.title} preview`}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                          <div className="absolute inset-0 bg-background/20 hover:bg-background/10 transition-colors" />
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              {/* Key Features */}
-              <div className="mb-4">
-                <h3 className="font-semibold text-base text-foreground mb-2">Key Features</h3>
-                <ul className="space-y-1.5">
-                  {project.features.map((feature, i) => (
-                    <li key={i} className="text-muted-foreground flex items-start gap-2 text-sm">
-                      <span className="text-accent mt-1 flex-shrink-0">•</span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Impact & Results */}
-              <div>
-                <h3 className="font-semibold text-base text-foreground mb-2">Impact & Results</h3>
-                <ul className="space-y-1.5">
-                  {project.impact.map((result, i) => (
-                    <li key={i} className="text-muted-foreground flex items-start gap-2 text-sm">
-                      <span className="text-accent mt-1 flex-shrink-0">•</span>
-                      <span>{result}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </article>
+            </div>
           ))}
         </div>
       </section>
