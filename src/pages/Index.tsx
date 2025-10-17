@@ -1,11 +1,11 @@
-import { Github, Linkedin, Mail, Youtube, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Mail, Youtube, ExternalLink, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const Index = () => {
   const projects = [
     {
-      title: "Exam Track - College Results Management System",
+      title: "Result Tracker - College Results Management System",
       description: "Full-stack web application for Deccan College of Engineering and Technology to manage student examination results with secure authentication, automated data processing, and real-time analytics. Features dual interface, smart result search, triple data entry methods, and web scraping integration.",
       tech: ["React", "TypeScript", "Supabase", "PostgreSQL", "Node.js", "Cheerio", "Tailwind CSS"],
       link: "https://deccan-result.vercel.app/"
@@ -32,32 +32,47 @@ const Index = () => {
 
   const experiences = [
     {
-      role: "Data Analyst",
+      role: "Customer Service Associate",
       company: "Amazon",
-      period: "2022 - Present",
+      period: "Sep 2023 - Jun 2024",
       achievements: [
-        "Developed analytics dashboards improving operational efficiency by 25%",
-        "Led data-driven initiatives for inventory optimization",
-        "Collaborated with cross-functional teams to drive insights"
+        "Achieved a 95% customer satisfaction rate based on feedback surveys.",
+        "Successfully handled an average of 150 customer cases per day.",
+        "Recognized for consistently exceeding performance targets and resolving customer issues efficiently.",
       ]
     },
     {
-      role: "Technology Fellow",
+      role: "Internship",
       company: "Code for India",
-      period: "2021 - 2022",
+      period: "November 2024",
       achievements: [
-        "Built civic tech solutions impacting 10,000+ citizens",
-        "Mentored junior developers in best practices",
-        "Contributed to open-source government projects"
+        "Collected, cleaned, and analyzed large datasets to support civic and social impact projects.", 
+        "Performed exploratory data analysis (EDA) to identify patterns and insights, utilizing Python (Pandas, NumPy, Matplotlib).",
+        "Built machine learning models for trend prediction and policy decision-making using Scikit-learn and TensorFlow.",
+        "Collaborated with cross-functional teams to ensure alignment of data solutions with project goals.",
+        "Created detailed reports and presented findings through data visualizations and progress updates."
+      ]
+    },
+        {
+      role: "Student Training Program on AI/ML",
+      company: "IIIT - Hyderabad",
+      period: "May 2025 - October 2025",
+      achievements: [
+        "Gained solid foundations in AI/ML concepts and real-world applications.",
+        "Built and evaluated classification, prediction, and regression models.",
+        "Applied key performance metrics to assess model accuracy and reliability.",
+        "Conducted data analysis, clustering, and dimensionality reduction (PCA).",
+        "Developed basic neural networks and explored deep learning fundamentals.",
+        "Created end-to-end ML/DL applications from data preparation to deployment."
       ]
     }
   ];
 
   const skills = {
     "Data & ML": ["Python", "TensorFlow", "Scikit-learn", "PyTorch", "SQL", "Pandas"],
-    "Web Development": ["React", "TypeScript", "Node.js", "MongoDB", "REST APIs"],
-    "Tools & Cloud": ["Git", "Docker", "AWS", "Jupyter", "Tableau"],
-    "Soft Skills": ["Problem Solving", "Communication", "Team Leadership", "Agile"]
+    "Web Development": ["React", "TypeScript", "Node.js", "MongoDB", "REST APIs", "FastAPI"],
+    "Tools & Cloud": ["Git", "Docker", "AWS", "Jupyter"],
+    "Soft Skills": ["Problem Solving", "Communication", "Team Leadership"]
   };
 
   return (
@@ -68,7 +83,7 @@ const Index = () => {
       </div>
       
       {/* Hero Section */}
-      <section className="max-w-3xl mx-auto px-6 py-20 md:py-32">
+      <section className="max-w-3xl mx-auto px-6 pt-20 md:pt-32 pb-12">
         <div className="space-y-6">
           <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground tracking-tight">
             Raza Abidi
@@ -99,6 +114,15 @@ const Index = () => {
               aria-label="LinkedIn"
             >
               <Linkedin className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://www.instagram.com/raza.abidii/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-accent transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-5 h-5" />
             </a>
             <a 
               href="mailto:razaabidi030@gmail.com"
@@ -249,13 +273,10 @@ const Index = () => {
         </h2>
         <div className="space-y-4 text-muted-foreground leading-relaxed">
           <p>
-            I'm a data scientist and technologist from Hyderabad, India, passionate about using technology to solve meaningful problems. My work sits at the intersection of machine learning, software engineering, and product thinking.
+            I'm a software engineer, data analyst, and technologist from Hyderabad, India, passionate about using technology to solve meaningful problems. My work sits at the intersection of machine learning, software engineering, and product thinking.
           </p>
           <p>
-            Currently, I'm exploring advanced ML techniques, building full-stack applications, and contributing to open-source projects. I believe in continuous learning and sharing knowledge with the community.
-          </p>
-          <p>
-            When I'm not coding, you'll find me reading about emerging technologies, experimenting with new frameworks, or mentoring aspiring developers.
+            Currently, I'm exploring advanced backend architectures, building scalable full-stack applications, and contributing to open-source backend projects. I believe in continuous learning, clean code practices, and sharing knowledge with the developer community.
           </p>
         </div>
       </section>
@@ -274,11 +295,11 @@ const Index = () => {
           I'm always open to interesting conversations and collaboration opportunities. Feel free to reach out if you'd like to connect.
         </p>
         <a 
-          href="mailto:your.email@example.com"
+          href="mailto:razaabidi030@gmail.com"
           className="inline-flex items-center gap-2 text-accent hover:text-foreground transition-colors font-medium"
         >
           <Mail className="w-5 h-5" />
-          your.email@example.com
+          razaabidi030@gmail.com
         </a>
       </section>
 
@@ -287,14 +308,14 @@ const Index = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p>© 2025 Syed Mohammed Raza Husain Abidi. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+            <a href="https://github.com/raza-abidii" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
               GitHub
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+            <a href="https://www.linkedin.com/in/raza-abidi-53675020b/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
               LinkedIn
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
-              YouTube
+            <a href="https://www.instagram.com/raza.abidii/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+              Instagram
             </a>
           </div>
         </div>

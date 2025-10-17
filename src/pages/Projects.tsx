@@ -5,7 +5,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 const Projects = () => {
   const allProjects = [
     {
-      title: "Exam Track - College Results Management System",
+      title: "Result Tracker - College Results Management System",
       description: "A comprehensive full-stack web application developed for Deccan College of Engineering and Technology to streamline student examination results management. Features include secure authentication, automated data processing, and real-time analytics with a dual interface system for both students and administrators.",
       longDescription: "This project revolutionizes how educational institutions manage and distribute examination results. The system incorporates smart result search functionality using hall ticket-based lookup, triple data entry methods (manual entry, Excel bulk upload, and OU website integration), and real-time analytics with automatic SGPA/CGPA calculations. The web scraping integration automates external marks fetching from Osmania University portal, while the responsive design ensures optimal performance across all devices.",
       tech: ["React", "TypeScript", "Supabase", "PostgreSQL", "Node.js", "Cheerio", "Tailwind CSS", "shadcn/ui"],
@@ -15,7 +15,7 @@ const Projects = () => {
         "Triple Data Entry: Manual entry, Excel bulk upload, and OU website integration",
         "Real-time Analytics: Automatic SGPA/CGPA calculations with performance visualization",
         "Advanced Grading: CIE (0-30) + External (0-70) marks with 10-point grading system",
-        "Web Scraping Integration: Automated external marks fetching from Osmania University portal"
+        "Working on Web Scraping Integration: Automated external marks fetching from Osmania University portal"
       ],
       impact: [
         "95% Efficiency Gain: Bulk upload vs manual data entry",
@@ -23,8 +23,8 @@ const Projects = () => {
         "Data Accuracy: Automated validation prevents entry errors",
         "Mobile Ready: 100% responsive across all devices"
       ],
-      github: "#",
-      live: "#"
+      github: "https://github.com/raza-abidii/Result-Tracker",
+      live: "https://deccan-result.vercel.app/"
     },
     {
       title: "Credit Card Fraud Detection",
@@ -177,17 +177,12 @@ const Projects = () => {
               <div className="mb-4">
                 <h3 className="font-semibold text-base text-foreground mb-2">Key Features</h3>
                 <ul className="space-y-1.5">
-                  {project.features.slice(0, 4).map((feature, i) => (
+                  {project.features.map((feature, i) => (
                     <li key={i} className="text-muted-foreground flex items-start gap-2 text-sm">
                       <span className="text-accent mt-1 flex-shrink-0">•</span>
                       <span>{feature}</span>
                     </li>
                   ))}
-                  {project.features.length > 4 && (
-                    <li className="text-muted-foreground text-sm italic">
-                      +{project.features.length - 4} more features
-                    </li>
-                  )}
                 </ul>
               </div>
 
